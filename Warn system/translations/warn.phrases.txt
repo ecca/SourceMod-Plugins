@@ -1,0 +1,383 @@
+"Phrases"
+{
+	"warn_warnconnect"
+	{
+		"#format"	"{1:N},{2:i}"
+		"en"		"{1} has connected with ({2}) Prior Warnings."
+		"fr"		"{1} connecte avec {2} avertissement(s) en memoire"
+		"de"		"{1} hat sich mit {2} vergangenen Warnungen verbunden"
+		"sv"		"{1} anslöt med {2} föregående varning(ar)"
+		"nl"		"{1} verbond met {2} vorige waarschuwing(en)"
+	}
+	
+	"warn_arguments"
+	{
+		"#format"	""
+		"en"		"Usage: sm_warn <#userid|name> reason"
+		"fr"		"Utilisation: sm_warn <#userid|nom> motif"
+		"de"		"Benutzung: sm_warn <#userid|name> Grund"
+		"sv"		"Användning: sm_warn <#userid|namn> anledning"
+		"nl"		"Gebruik: sm_warn <#userid|naam> reden"
+	}
+	
+	"warn_warnplayer"
+	{
+		"#format"	"{1:N},{2:s}"
+		"en"		"issued a warning on {1} with reason: {2}"
+		"fr"		"a donne un avertissement a {1} pour motif: {2}"
+		"de"		"{1} wurde mit gewarnt mit dem Grund: {2}"
+		"sv"		"utfärdade en varning på {1} med anledningen: {2}"
+		"nl"		"heeft een waarschuwing aan {1} gegegeven met de reden: {2}"
+	}
+	
+	"warn_warnlog"
+	{
+		"#format"	"{1:N},{2:s},{3:s},{4:N},{5:s},{6:s},{7:s}"
+		"en"		"ADMIN (NICK: {1} | ID: {2} | IP: {3}) issued a warning on PLAYER (NICK: {4} | ID: {5} | IP: {6}) with reason: {7}"
+		"fr"		"ADMIN (PSEUDO: {1} | ID: {2} | IP: {3}) a donne un avertissement au JOUEUR (PSEUDO: {4} | ID: {5} | IP: {6}) avec comme motif: {7}"
+		"de"		"ADMIN (NICK: {1} | ID: {2} | IP: {3}) hat SPIELER (NICK: {4} | ID: {5} | IP: {6}) wegen: {7}"
+		"sv"		"ADMIN (NICK: {1} | ID: {2} | IP: {3}) utfärdade en varning på SPPELAREN (NICK: {4} | ID: {5} | IP: {6}) med anledningen: {7}"
+		"nl"		"ADMIN (NICK: {1} | ID: {2} | IP: {3}) gaf een waarschuwing aan PLAYER (NICK: {4} | ID: {5} | IP: {6}) met de reden: {7}"
+	}
+	
+	"warn_max_kickonly"
+	{
+		"#format"	""
+		"en"		"You have been kicked for reaching maximum warnings"
+		"fr"		"Tu as ete kicke apres avoir ete suffisamment averti"
+		"de"		"Du wurdest gekickt wegen Ueberschreitung der Maximalgrenze von Warnungen"
+		"sv"		"Du har blivit utslängd för ha nått max antal varningar"
+		"nl"		"Je bent gekickt omdat je teveel waarschuwingen hebt"
+	}
+	
+	"warn_max_kick"
+	{
+		"#format"	""
+		"en"		"You have been banned for reaching maximum warnings"
+		"fr"		"Tu as ete banni apres avoir ete suffisamment averti"
+		"de"		"Du wurdest gebannt wegen Ueberschreitung der Maximalgrenze von Warnungen"
+		"sv"		"Du har blivit bannlyst för ha nått max antal varningar"
+		"nl"		"Je bent verbannen voor teveel waarschuwingen hebben"
+	}
+	
+	"warn_max_ban"
+	{
+		"#format"	"{1:s}"
+		"en"		"You reached maximum warnings (Reason: {1}"
+		"fr"		"Tu as ete suffisamment averti"
+		"de"		"Dies ist Deine letzte Warnung!"
+		"sv"		"Du nådde max antal varningar"
+		"nl"		"Je hebt het maximale waarschuwings niveau bereikt"
+	}
+	
+	"warn_message"
+	{
+		"#format"	""
+		"en"		"You have been issued a warning. Follow the rules or further actions will be taken."
+		"fr"		"Tu viens de recevoir un avertissement. Respecte les regles ou des sanctions seront prises."
+		"de"		"Du wurdest verwarnt. Halte Dich an die Regeln, oder weitere Konsequenzen werden gezogen."
+		"sv"		"Du har utfärdats en varning. Följ reglerna eller ytterligare åtgärder kommer att vidtas."
+		"nl"		"Je kreeg een waarschuwing. Volg de regels of meerdere acties zullen worden ondernomen."
+	}
+	
+	"warn_punish_kick"
+	{
+		"#format"	"{1:s}"
+		"en"		"You have been kicked for receiving a warning (Reason:{1})"
+		"fr"        "Tu as ete kicke en guise d'avertissement (Motif: {1})"
+		"de"		"Du wurdest gekickt, weil Du eine Warnung erhalten hast"
+		"sv"		"Du har blivit utslängd för att ha mottagit en varning (Anledning: {1})"
+		"nl"		"Je bent gekickt vanwege een waarschuwing (Reden: {1})"
+	}
+	
+	
+	"warn_punish_kickban"
+	{
+		"#format"	"{1:s}"
+		"en"		"You have been banned for receiving a warning (Reason: {1})"
+		"fr"		"Tu as ete banni en guise d'avertissement (Motif: {1})"
+		"de"		"Du wurdest gebannt, weil Du eine Warnung erhalten hast"
+		"sv"		"Du har blivit bannlyst för att ha mottagit en varning (Anledning: {1})"
+		"nl"		"Je bent verbannen vanwege een waarschuwing (Reden: {1})"
+	}
+	
+	"warn_punish_ban"
+	{
+		"#format"	"{1:s}"
+		"en"		"You received a warning (Reason: {1})"
+		"fr"        "Tu viens de recevoir un avertissement (Motif: {1})"
+		"de"		"Du wurdest gewarnt"
+		"sv"		"Du blev varnad (Anledning: {1})"
+		"nl"		"Je ontvangt een waarschuwing (Reden: {1})"
+	}
+	
+	"warn_arguments2"
+	{
+		"#format"	""
+		"en"		"Usage: sm_unwarn <#userid|name> reason"
+		"fr"		"Utilisation: sm_unwarn <#userid|nom> motif"
+		"de" 		"Benutzung: sm_unwarn <#userid|name> Grund"
+		"sv"		"Användning: sm_unwarn <#userid|namn> anledning"
+		"nl"		"Gebruik: sm_unwarn <#userid|naam> reden"
+	}
+	
+	"warn_unwarn_player"
+	{
+		"#format"	"{1:N},{2:s}"
+		"en"		"removed a warning on {1} with reason: {2}"
+		"fr"        "a supprime un avertissement de {1} pour motif: {2}"
+		"de"		"Warnung von Spieler {1} zurückgenommen. Grund: {2}"
+		"sv"		"tog bort en varning på {1} med anledningen: {2}"
+		"nl"		"verwijderde waarschuwing van {1} met de reden: {2}"
+	}
+	
+	"warn_unwarn_log"
+	{
+		"#format" 	"{1:N},{2:s},{3:s},{4:N},{5:s},{6:s},{7:s}"
+		"en"	  	"ADMIN (NICK: {1} | ID: {2} | IP: {3}) removed a warning on PLAYER (NICK: {4} | ID: {5} | IP: {6}) with reason: {7}"
+		"fr"        "ADMIN (PSEUDO: {1} | ID: {2} | IP: {3}) a supprime un avertissement du JOUEUR (PSEUDO: {4} | ID: {5} | IP: {6}) avec comme motif: {7}"
+		"de" 		"ADMIN (NICK: {1} | ID: {2} | IP: {3}) hat die Warnungen von SPIELER (NICK: {4} | ID: {5} | IP: {6}) zurückgenommen. Grund: {7}"
+		"sv"	    "ADMIN (NICK: {1} | ID: {2} | IP: {3}) tog bort en varning på SPELAREN (NICK: {4} | ID: {5} | IP: {6}) med anledningen: {7}"
+		"nl" 		"ADMIN (NICK: {1} | ID: {2} | IP: {3}) verwijderde de waarschuwingen van SPELER (NICK: {4} | ID: {5} | IP: {6}) reden: {7}"
+	}
+	
+	"warn_notwarned"
+	{
+		"#format"	"{1:N}"
+		"en"		"{1} has not been warned before."
+		"fr"        "{1} n'a encore jamais ete averti."
+		"de"		"{1} wurde bisher nicht gewarnt."
+		"sv"		"{1} har inte varnats förut."
+		"nl"		"{1} heeft geen eerde waarschuwing gehad."
+	}
+	
+	"warn_notavailable"
+	{
+		"#format"	""
+		"en"		"Player is no longer available."
+		"fr"        "Ce joueur n'est plus accessible."
+		"de"		"Spieler ist nicht mehr verfügbar."
+		"sv"		"Spelaren är inte längre tillgänglig."
+		"nl"		"Speler is niet meer beschikbaar."
+	}
+	
+	"warn_canttarget"
+	{
+		"#format"	""
+		"en"		"Unable to target player."
+		"fr"        "Impossible de determiner ce joueur."
+		"de"		"Kann Spieler nicht erfassen."
+		"sv"		"Kan inte välja den spelaren."
+		"nl"		"Kan actie niet uitvoeren op speler."
+	}
+	
+	"warn_warn_adminmenu_title"
+	{
+		"#format"	""
+		"en"		"Warn player"
+		"fr"        "Donner un avertissement"
+		"de"		"warne Spieler"
+		"sv"		"Varna spelare"
+		"nl"		"Waarschuw speler"
+	}
+	
+	"warn_unwarn_adminmenu_title"
+	{
+		"#format"	""
+		"en"		"UnWarn player"
+		"fr"        "Retirer un avertissement"
+		"de"		"entwarne Spieler"
+		"sv"		"Ovarna spelare"
+		"nl"		"De-waarschuw speler"
+	}
+	
+	"warn_resetwarn_adminmenu_title"
+    {
+        "#format"    ""
+        "en"        "Reset warnings"
+        "fr"        "Réinitialiser les avertissements"
+        "de"        "Warnungen Zurücksetzen"
+        "sv"        "Återställ varningar"
+        "nl" 		"Reset waarschuwingen"
+    }
+	
+	"warn_checkwarn_adminmenu_title"
+	{
+		"#format"	""
+		"en"		"Check warnings"
+		"fr"        "Controler les avertissements"
+		"de"		"Warnungen Überprüfen"
+		"sv"		"Kolla varningar"
+		"nl" 		"Check waarschuwingen"
+	}
+	
+	"warn_warn_targetmenutitle"
+	{
+		"#format"	""
+		"en"		"Select player"
+		"fr"        "Selectionner un joueur"
+		"de"		"Spieler wählen"
+		"sv"		"Välj spelare"
+		"nl"		"Selecteer speler"
+	}
+	
+	"warn_unwarn_targetmenutitle"
+	{
+		"#format"	""
+		"en"		"Select player"
+		"fr"        "Selectionner un joueur"
+		"de"		"Spieler wählen"
+		"sv"		"Välj spelare"
+		"nl"		"Selecteer speler"
+	}
+	
+	"warn_checkwarn_targetmenutitle"
+	{
+		"#format"	""
+		"en"		"Select player"
+		"fr"        "Selectionner un joueur"
+		"de"		"Spieler wählen"
+		"sv"		"Välj spelare"
+		"nl"		"Selecteer speler"
+	}
+	
+	"warn_warn_reasontitle"
+	{
+		"#format"	""
+		"en"		"Select reason"
+		"fr"        "Choisir un motif"
+		"de"		"Grund wählen"
+		"sv"		"Välj anledning"
+		"nl"		"Selecteer reden"
+	}
+	
+	"warn_unwarn_reasontitle"
+	{
+		"#format"	""
+		"en"		"Select reason"
+		"fr"        "Choisir un motif"
+		"de"		"Grund wählen"
+		"sv"		"Välj anledning"
+		"nl"		"Selecteer reden"
+	}
+	
+	"warn_arguments3"
+	{
+		"#format"	""
+		"en"		"Usage: sm_checkwarn <#userid|name>"
+		"fr"        "Utilisation: sm_checkwarn <#userid|nom>"
+		"de" 		"Benutzung: sm_checkwarn <#userid|name>"
+		"sv"		"Användning: sm_checkwarn <#userid|namn>"
+		"nl"		"Gebruik: sm_checkwarn <#userid|naam>"
+	}
+	
+	"warn_consoleoutput"
+	{
+		"#format"	"{1:N},{2:i}"
+		"en"		"Player {1} has been warned {2} time(s) before:"
+		"fr"        "Le joueur {1} a deja ete averti {2} fois auparavant:"
+		"de" 		"Spieler {1} wurde {2} mal gewarnt:"
+		"sv"        "Spelaren {1} har varnats {2} gånger förut:"
+		"nl"		"Speler {1} is gewaarschuwd {2} keren voordat:"
+	}
+	
+	"warn_arguments4"
+	{
+		"#format"	""
+		"en"		"Usage: sm_resetwarn <#userid|name> reason\""
+		"fr"		"Utilisation: sm_resetwarn <#userid|nom> motif"
+		"de" 		"Benutzung: sm_resetwarn <#userid|name> Grund"
+		"sv"		"Användning: sm_resetwarn <#userid|namn> anledning"
+		"nl"		"Gebruik: sm_resetwarn <#userid|naam> reden"
+	}
+	
+	"warn_resetwarn_targetmenutitle"
+	{
+		"#format"	""
+		"en"		"Select player"
+		"fr"        "Selectionner un joueur"
+		"de"		"Spieler wählen"
+		"sv"		"Välj spelare"
+		"nl"		"Selecteer speler"
+	}
+	
+	"warn_restwarn_reasontitle"
+	{
+		"#format"	""
+		"en"		"Select reason"
+		"fr"        "Choisir un motif"
+		"de"		"Grund wählen"
+		"sv"		"Välj anledning"
+		"nl"		"Selecteer reden"
+	}
+	
+	"warn_resetwarn_log"
+	{
+		"#format"	"{1:N},{2:s},{3:s},{4:N},{5:s},{6:s},{7:s}"
+		"en"		"ADMIN (NICK: {1} | ID: {2} | IP: {3}) reseted warnings on PLAYER (NICK: {4} | ID: {5} | IP: {6}) with reason: {7}"
+		"fr"        "ADMIN (PSEUDO: {1} | ID: {2} | IP: {3}) a efface les avertissements du JOUEUR (PSEUDO: {4} | ID: {5} | IP: {6}) pour motif: {7}"
+		"de"		"ADMIN (NICK: {1} | ID: {2} | IP: {3}) hat die Warnungen von Spieler (NICK: {4} | ID: {5} | IP: {6}) mit dem Grund {7} zurückgesetzt"
+		"sv"		"ADMIN (NICK: {1} | ID: {2} | IP: {3}) återställde varningarna på SPELAREN (NICK: {4} | ID: {5} | IP: {6}) med anledningen: {7}"
+		"nl"		"ADMIN (NICK: {1} | ID: {2} | IP: {3}) resetde de waarschuwingen van SPELER (NICK: {4} | ID: {5} | IP: {6}) met de reden: {7}"
+	}
+	
+	"warn_resetplayer"
+	{
+		"#format"	"{1:N},{2:s}"
+		"en"		"reseted {1}'s warnings with reason: {2}"
+		"fr"        "suppression des avertissements de {1} pour motif: {2}"
+		"de"		"{1} Wrnungen wurden zurückgesetzt! Grund: {2}"
+		"sv"		"återställde {1}'s varningar med anleningen: {2}"
+		"nl" 		"resetde {1}'s waarschuwingen met de reden: {2}"
+	}
+	
+	"warn_agreement_title"
+	{
+		"#format"	""
+		"en"		"Terms Agreement"
+		"fr"        "termes d'accord"
+		"de"        "Bedingungen akzeptieren"
+		"sv"		"Villkors avtal"
+		"nl" 		"Voorwaarden accepteren"
+	}
+	
+	"warn_agreement_agree"
+	{
+		"#format"	""
+		"en"		"I agree"
+		"fr"        "J'accepte"
+		"de"        "Ich stimme zu"
+		"sv"		"Acceptera"
+		"nl" 		"Ik accepteer"
+	}
+	
+	"warn_agreement_message"
+	{
+		"#format"	""
+		"en"		"Thank you for understanding, you can now play again."
+		"fr"        "Merci de ta comprehension, tu peux jouer a nouveau."
+		"de"        "Vielen Dank für Dein Verständnis. Du darfst nun wieder spielen."
+		"sv"		"Tack för din förståelse, du kan nu spela igen."
+		"nl" 		"Bedankt voor het begrip, nu kun je weer spelen."
+	}
+	
+	"warn_update"
+    {
+        "#format"    ""
+        "en"        "There is a new update available for SM warn. This update is recommended!"
+        "fr"        "Une nouvelle version est disponible. Merci de procéder à la mise à jour!"
+        "de"        ""
+        "sv"        "Det finns en ny uppdatering för SM warn. Denna uppdateringen är rekommenderad!"
+        "nl"        ""
+    }
+	
+	"warn_update2"
+    {
+        "#format"    ""
+        "en"        "There is a new update available for SM warn. This update is critical!"
+        "fr"        ""
+        "de"        ""
+        "sv"        "Det finns en ny uppdatering för SM warn. Denna uppdateringen är kritisk!"
+        "nl"        ""
+    }
+}
