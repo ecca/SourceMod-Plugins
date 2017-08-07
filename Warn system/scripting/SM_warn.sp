@@ -6,20 +6,11 @@
 #undef REQUIRE_PLUGIN
 #undef REQUIRE_EXTENSIONS
 #tryinclude <sourcebans>
-#tryinclude <socket>
 #define REQUIRE_EXTENSIONS
 #define REQUIRE_PLUGIN
 
 
-#define PLUGIN_VERSION "1.1.0"
-
-// Updater stuff
-#define APIPLUGIN "warn"
-#define APIURL "update.alliedmodders.se"
-#define APIPORT 80
-#define USERAGENT "SourceMod"
-#define UPDATE_RECOMMENDED "1"
-#define UPDATE_CRITICAL "2"
+#define PLUGIN_VERSION "1.2.0"
 
 // Handles
 new Handle:hDatabase = INVALID_HANDLE;
@@ -43,9 +34,6 @@ new Handle:g_cVar_reset_warnings = INVALID_HANDLE;
 
 // Bools
 new bool:g_UseSourcebans = false;
-new bool:UpdateAvailable = false;
-new bool:UpdatePriorityNormal = false;
-new bool:UpdatePriorityHigh = false;
 
 new g_target[MAXPLAYERS+1];
 
@@ -123,12 +111,6 @@ public OnPluginStart()
 	{
 		OnAdminMenuReady(topmenu);
 	}
-
-	// Check for updates on start
-	UpdateCheck();
-
-	// Update Timer
-	CreateTimer(10080.0, Timer_HandleUpdates, _, TIMER_REPEAT);
 }
 
 public APLRes:AskPluginLoad2(Handle:myself, bool:late, String:error[], err_max)
@@ -138,14 +120,7 @@ public APLRes:AskPluginLoad2(Handle:myself, bool:late, String:error[], err_max)
 	CreateNative("smwarn_unwarn", Native_UnWarnPlayer);
 	CreateNative("smwarn_resetwarn", Native_ResetWarnPlayer);
 	
-	// Make this optional or it will create errors for those who doesn't have sockets
-	MarkNativeAsOptional("SocketCreate");
-	MarkNativeAsOptional("SocketSetArg");
-	MarkNativeAsOptional("SocketSetOption");
-	MarkNativeAsOptional("SocketConnect");
-	MarkNativeAsOptional("SocketDisconnect");
-	MarkNativeAsOptional("SocketIsConnected");
-	MarkNativeAsOptional("SocketSend");
+	// Make this optional
 	MarkNativeAsOptional("SBBanPlayer");
 	
 	RegPluginLibrary("smwarn");
@@ -873,113 +848,6 @@ public SQL_EmptyCallback(Handle:owner, Handle:hndl, const String:error[], any:da
 	if (!StrEqual(error, "", false))
 	{
 		LogError("Query failure: %s", error);
-	}
-}
-
-public UpdateCheck()
-{
-	new Handle:Socket = SocketCreate(SOCKET_TCP, OnSocketError);
-		
-	SocketSetOption(Socket, ConcatenateCallbacks, 4096);
-	SocketSetOption(Socket, SocketReceiveTimeout, 3);
-	SocketSetOption(Socket, SocketSendTimeout, 3);
-	SocketConnect(Socket, OnSocketConnect, OnSocketReceive, OnSocketDisconnect, APIURL, APIPORT);
-}
-
-public Action:Timer_HandleUpdatesNews(Handle:timer)
-{
-	if(UpdateAvailable)
-	{
-		if(UpdatePriorityNormal)
-		{
-			for(new i = 0; i<3; i++)
-			{
-				PrintToAdmins("\x03[Warn] \x01%t", "warn_update");
-			}
-		}
-		if(UpdatePriorityHigh)
-		{
-			for(new i = 0; i<3; i++)
-			{
-				PrintToAdmins("\x03[Warn] \x01%t", "warn_update2");
-			}
-		}
-	}
-}
-
-public Action:Timer_HandleUpdates(Handle:timer)
-{
-	if(!UpdateAvailable)
-	{
-		UpdateCheck();
-	}
-}
-
-public OnSocketConnect(Handle:socket, any:data)
-{
-	if(SocketIsConnected(socket))
-	{
-		new String:RequestString[1024];
-		
-		Format(RequestString, sizeof(RequestString), "GET /%s%s%s%s HTTP/1.0\r\nHost: %s\r\nUser-Agent: %s\r\nConnection: close\r\n\r\n", "check.php?plugin=", APIPLUGIN, "&version=", PLUGIN_VERSION, APIURL, USERAGENT);
-
-		SocketSend(socket, RequestString);
-	}
-}
-
-public OnSocketReceive(Handle:socket, String:data[], const size, any:data2) 
-{	
-	if(socket != INVALID_HANDLE)
-	{	
-		decl String:piece[3][255];
-		ExplodeString(data,"&",piece,sizeof(piece),sizeof(piece[]));
-		
-		if(!StrEqual(piece[1], PLUGIN_VERSION, false))
-		{
-			UpdateAvailable = true;
-			
-			if(StrEqual(piece[2], UPDATE_RECOMMENDED, false))
-			{
-				for(new i = 0; i<3; i++)
-				{
-					PrintToAdmins("\x03[Warn] \x01%t", "warn_update");
-					LogWarnings("There is a new update available for SM warn. This update is recommended!");
-				}
-				UpdatePriorityNormal = true;
-			} 
-			else if(StrEqual(piece[2], UPDATE_CRITICAL, false))
-			{
-				for(new i = 0; i<3; i++)
-				{
-					PrintToAdmins("\x03[Warn] \x01%t", "warn_update2");
-					LogWarnings("There is a new update available for SM warn. This update is CRITICAL!");
-				}
-				UpdatePriorityHigh = true;
-			}
-			
-			CreateTimer(600.0, Timer_HandleUpdatesNews, _, TIMER_REPEAT);
-		}
-		
-		if(SocketIsConnected(socket))
-		{
-			SocketDisconnect(socket);
-		}
-	}
-}
-
-public OnSocketDisconnect(Handle:socket, any:data)
-{
-	if(socket != INVALID_HANDLE)
-	{
-		CloseHandle(socket);
-	}
-}
-
-public OnSocketError(Handle:socket, const errorType, const errorNum, any:client)
-{
-	if(socket != INVALID_HANDLE)
-	{
-		CloseHandle(socket);
 	}
 }
 
